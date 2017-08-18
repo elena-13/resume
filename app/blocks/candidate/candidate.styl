@@ -1,0 +1,39 @@
+.candidate
+	display block
+	padding-top 73px
+
+.candidate__str
+	display flex 
+	flex-flow row wrap 
+	padding 12px 0 
+
+.candidate__title
+	font-family $font-bold
+	color $font-color
+	font-size 22px
+	padding-right 2%
+.candidate__text 
+	font-family $font-reg
+	color $font-color-light
+	font-size 30px 
+	line-height 0.5
+	flex 1
+	padding-left 2%
+	position relative
+	&:after 
+		content ""
+		background-image url(../img/texture-brown.png)
+		width 100% 
+		position absolute
+		bottom 0 
+		left 0 
+		height 2px
+
+.candidate__link
+	text-decoration none
+	cursor pointer
+	color inherit
+	transition color .3s ease
+	&:hover 
+		color red	
+	

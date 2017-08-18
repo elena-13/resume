@@ -1,0 +1,188 @@
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon_home_width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon_home = x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet = width height image $spritesheet_sprites;
+*/
+$bottomborder_name = 'bottomborder';
+$bottomborder_x = 0px;
+$bottomborder_y = 0px;
+$bottomborder_offset_x = 0px;
+$bottomborder_offset_y = 0px;
+$bottomborder_width = 768px;
+$bottomborder_height = 60px;
+$bottomborder_total_width = 768px;
+$bottomborder_total_height = 95px;
+$bottomborder_image = '../images/sprites/elem.png';
+$bottomborder = 0px 0px 0px 0px 768px 60px 768px 95px '../images/sprites/elem.png' 'bottomborder';
+$checkbox_name = 'checkbox';
+$checkbox_x = 65px;
+$checkbox_y = 68px;
+$checkbox_offset_x = -65px;
+$checkbox_offset_y = -68px;
+$checkbox_width = 18px;
+$checkbox_height = 18px;
+$checkbox_total_width = 768px;
+$checkbox_total_height = 95px;
+$checkbox_image = '../images/sprites/elem.png';
+$checkbox = 65px 68px -65px -68px 18px 18px 768px 95px '../images/sprites/elem.png' 'checkbox';
+$checkmark_name = 'checkmark';
+$checkmark_x = 36px;
+$checkmark_y = 68px;
+$checkmark_offset_x = -36px;
+$checkmark_offset_y = -68px;
+$checkmark_width = 21px;
+$checkmark_height = 27px;
+$checkmark_total_width = 768px;
+$checkmark_total_height = 95px;
+$checkmark_image = '../images/sprites/elem.png';
+$checkmark = 36px 68px -36px -68px 21px 27px 768px 95px '../images/sprites/elem.png' 'checkmark';
+$radiocircle_name = 'radiocircle';
+$radiocircle_x = 0px;
+$radiocircle_y = 68px;
+$radiocircle_offset_x = 0px;
+$radiocircle_offset_y = -68px;
+$radiocircle_width = 28px;
+$radiocircle_height = 27px;
+$radiocircle_total_width = 768px;
+$radiocircle_total_height = 95px;
+$radiocircle_image = '../images/sprites/elem.png';
+$radiocircle = 0px 68px 0px -68px 28px 27px 768px 95px '../images/sprites/elem.png' 'radiocircle';
+$radiopoint_name = 'radiopoint';
+$radiopoint_x = 91px;
+$radiopoint_y = 68px;
+$radiopoint_offset_x = -91px;
+$radiopoint_offset_y = -68px;
+$radiopoint_width = 14px;
+$radiopoint_height = 13px;
+$radiopoint_total_width = 768px;
+$radiopoint_total_height = 95px;
+$radiopoint_image = '../images/sprites/elem.png';
+$radiopoint = 91px 68px -91px -68px 14px 13px 768px 95px '../images/sprites/elem.png' 'radiopoint';
+$sp_elem_width = 768px;
+$sp_elem_height = 95px;
+$sp_elem_image = '../images/sprites/elem.png';
+$sp_elem_sprites = $bottomborder $checkbox $checkmark $radiocircle $radiopoint;
+$sp_elem = 768px 95px '../images/sprites/elem.png' $sp_elem_sprites;
+
+// These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+
+// The list formatted variables are intended for mixins like `retinaSprite` and `retinaSprites`.
+
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  spriteWidth($icon_home)
+}
+
+.icon-email {
+  sprite($icon_email)
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}
+
+
+// The `retinaSprite` mixin sets up rules and a media query for a sprite/retina sprite.
+// It should be used with a "retina group" variable.
+//
+// The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+//
+// $icon_home_group = 'icon-home' $icon_home $icon_home_2x;
+//
+// .icon-home {
+//     retinaSprite($icon_home_group)
+// }
+
+
+spriteBackgroundSize($sprite) {
+	background-size $sprite[6] $sprite[7]
+}
+
+retinaSprite($retina_group) {
+	$normal_sprite = $retina_group[1]
+	$retina_sprite = $retina_group[2]
+	sprite($normal_sprite)
+
+	@media (-webkit-min-device-pixel-ratio: 2),
+				 (min-resolution: 192dpi) {
+		spriteImage($retina_sprite)
+		spriteBackgroundSize($normal_sprite)
+	}
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of Stylus
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+sprites($spritesheet_sprites);
+*/
+sprites($sprites) {
+  for $sprite in $sprites {
+    $sprite_name = $sprite[9];
+    .{$sprite_name} {
+      sprite($sprite);
+    }
+  }
+}
+
+// The `retinaSprites` mixin generates a CSS rule and media query for retina groups
+// This yields the same output as CSS retina template but can be overridden in Stylus
+//
+// retinaSprites($retina_groups)
+
+retinaSprites($retina_groups) {
+	for $retina_group in $retina_groups {
+		$sprite_name = $retina_group[0];
+		.{$sprite_name} {
+			retinaSprite $retina_group
+		}
+	}
+}

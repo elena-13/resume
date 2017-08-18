@@ -1,0 +1,14 @@
+mixin explanation(explanation)
+	+b.explanation&attributes(attributes)
+		+e.descr 
+			+e('h2').title
+				|Расскажите о себе словами
+			+e('p').help 
+				|Напишите пару предложений, чем вас привлекла наша 
+				|вакансия и чего вы ожидаете от работы в CSSSR.
+				|Кстати, будет здорово, если при нехватке места 
+				|для текста строки будут добавляться автоматически.
+		+b.textarea 
+			+e('textarea').text(rows="20" name="textarea") #{explanation.textarea.text}
+			
+			

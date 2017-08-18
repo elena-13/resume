@@ -1,0 +1,12 @@
+mixin jslevel()
+	+b.jslevel&attributes(attributes)
+		+e.descr 
+			+e('h2').title
+				|Уровень владения JavaScript
+			+b.slider
+				+e('ul').list
+					- var list = ["Не владею", "Использую готовые решения", "Использую готовые решения и умею их переделывать", "Пишу сложный JS с нуля"]
+					each item in list	
+						+e('li').item
+							+e.element= item	
+			

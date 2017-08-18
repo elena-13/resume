@@ -1,0 +1,19 @@
+mixin purpose(purpose)
+	+b.purpose&attributes(attributes)
+		+e.descr 
+			+e('h2').title
+				|Какие у вас планы на будущее?
+			+e('p').help 
+				|Этот ответ ни на что не повлияет. 
+				|Не беда, если в будущем ваши планы поменяются.
+		+b.radiobtn
+			+e('ul').list
+				each item in purpose
+					+e('li').item
+						+e.wrapper
+							if item.checked === true
+								+e('input').input(type="#{item.type}" id="#{item.name}" name="#{item.name}" value="#{item.name}" checked)
+							else 
+								+e('input').input(type="#{item.type}" id="#{item.name}" name="#{item.name}" value="#{item.name}" )
+
+							+e('label').label(for="#{item.name}") #{item.text}

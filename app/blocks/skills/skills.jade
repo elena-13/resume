@@ -1,0 +1,28 @@
+mixin skills(skills)
+	+b.skills&attributes(attributes)
+		+e.descr 
+			+e('h2').title
+				|Расскажите о себе чекбоксами
+			+e('p').help 
+				|Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. 
+				|Кстати, отсутствие опыта не означает, что у вас меньше шансов 
+				|стать одним из наших товарищей. Это означает, что вы будете 
+				|получать те задачи, с которыми гарантировано будете справляться.	
+		+b.checkbox 
+			- for(var i= 0; i < 3; ++i)
+				+e.col 
+					+e('ul').list
+						each item in skills.slice(i*7,i*7 + 7)
+							+e('li').item
+								if item.checked === true
+									+e('input').input(type="#{item.type}" id="#{item.name}" name="#{item.name}" value="#{item.name}" checked)
+									+e('label').label(for="#{item.name}") #{item.text}
+								else if item.link 
+									+e('input').input(type="#{item.type}" id="#{item.name}" name="#{item.name}" value="#{item.name}")
+									+e('label').label(for="#{item.name}") #{item.text}
+										+e('a').link(href="#{item.link}") #{item.link}
+								else 
+									+e('input').input(type="#{item.type}" id="#{item.name}" name="#{item.name}" value="#{item.name}" )
+									+e('label').label(for="#{item.name}") #{item.text}
+										
+

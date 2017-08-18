@@ -1,0 +1,115 @@
+[
+    { 
+        "type" : "checkbox",
+        "name" : "bem", 
+        "text" : "БЭМ/OOCSS", 
+        "checked": true
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "jade", 
+        "text" : "Pug(Jade)", 
+        "checked": true
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "sass", 
+        "text" : "Stylus/LESS/SASS", 
+        "checked": true
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "svg", 
+        "text" : "Работаю с SVG", 
+        "checked": true
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "semantically", 
+        "text" : "Верстаю семантично", 
+        "checked": true
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "a11y", 
+        "text" : "Accessibility(A11Y)", 
+        "checked": false
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "es15/es16", 
+        "text" : "ES2015/ES2016", 
+        "checked": false
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "gulp", 
+        "text" : "Gulp/GRUNT", 
+        "checked": true
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "webpack", 
+        "text" : "Webpack", 
+        "checked": false
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "webgl", 
+        "text" : "Дружу с WebGL", 
+        "checked": false
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "jquery", 
+        "text" : "jQuery", 
+        "checked": true
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "angular", 
+        "text" : "Знаю/изучаю Angular", 
+        "checked": false
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "react", 
+        "text" : "Знаю/изучаю React", 
+        "checked": true
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "node", 
+        "text" : "Знаю/изучаю Node.js", 
+        "checked": true
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "git", 
+        "text" : "Использую Git", 
+        "checked": true
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "accurate", 
+        "text" : "С глазомером все ок", 
+        "checked": true
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "accurate", 
+        "text" : "Читаю", 
+        "link" : "http://blog.csssr.ru",
+        "checked": false
+    },
+    { 
+        "type" : "checkbox",
+        "name" : "english", 
+        "text" : "У меня хороший английский", 
+        "checked": true
+    }
+    
+]
+
+
+

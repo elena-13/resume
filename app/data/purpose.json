@@ -1,0 +1,26 @@
+[
+    { 
+        "type" : "radio",
+        "name" : "html", 
+        "text" : "Верстать", 
+        "checked": false
+    },
+    { 
+        "type" : "radio",
+        "name" : "js", 
+        "text" : "Прокачиваться в JS", 
+        "checked": true
+    },
+    { 
+        "type" : "radio",
+        "name" : "manage", 
+        "text" : "Менеджерство", 
+        "checked": false
+    },
+    { 
+        "type" : "radio",
+        "name" : "other", 
+        "text" : "Другое", 
+        "checked": false
+    }
+] 

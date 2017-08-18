@@ -1,0 +1,15 @@
+mixin candidate(candidate)
+	+b.candidate&attributes(attributes)
+		+e('ul').list
+			each item in candidate
+				if item.link
+					+e('li').str
+						+e.title #{item.title}
+						+e.text  
+							+e('a').link(href="#{item.link}") #{item.text}
+				else 
+					+e('li').str
+						+e.title #{item.title}
+						+e.text #{item.text}			
+
+			

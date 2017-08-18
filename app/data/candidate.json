@@ -1,0 +1,25 @@
+[
+	{
+		"title": "Полное ФИО",
+		"text": "Горяинова Алена Эдуардовна"
+	},
+	{
+		"title": "Год рождения",
+		"text": "1993"
+	},
+	{
+		"title": "Место жительства",
+		"text": "г. Симферополь, Россия"
+	},
+	{
+		"title": "Скайп",
+        "link": "skype:cl49352009?add",
+        "text": "cl49352009"
+
+	},
+	{
+        "title": "Почта",
+        "link": "mailto:goryainova.alena@gmail.com",
+		"text": "goryainova.alena@gmail.com"
+	}
+]
