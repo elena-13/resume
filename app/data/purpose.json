@@ -1,25 +1,29 @@
 [
     { 
         "type" : "radio",
-        "name" : "html", 
+        "id": "html",
+        "name" : "career-growth", 
         "text" : "Верстать", 
         "checked": false
     },
     { 
         "type" : "radio",
-        "name" : "js", 
+        "id": "js",
+        "name" : "career-growth", 
         "text" : "Прокачиваться в JS", 
         "checked": true
     },
     { 
         "type" : "radio",
-        "name" : "manage", 
+        "id": "manage",
+        "name" : "career-growth", 
         "text" : "Менеджерство", 
         "checked": false
     },
     { 
         "type" : "radio",
-        "name" : "other", 
+        "id": "other",
+        "name" : "career-growth", 
         "text" : "Другое", 
         "checked": false
     }
